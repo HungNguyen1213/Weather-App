@@ -3,6 +3,7 @@
   width: 40%;
   height: 100%;
   z-index: 1;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -95,20 +96,20 @@
   transition: all 0.2s ease-in;
 }
 .control-panel .weather-details {
-  padding: 0 40px;
-  width: 100%;
+  margin: 0 40px 20px 40px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex-grow: 1;
 }
 .control-panel .weather-details ul {
   width: 100%;
+  flex-grow: 1;
 }
 .control-panel .weather-details__title {
   font-weight: bold;
   margin-bottom: 20px;
-  width: 100%;
 }
 .weather-details li {
   display: flex;
@@ -116,4 +117,22 @@
 }
 .op-7 {
   opacity: 0.7;
+}
+
+@media screen and (max-width: 992px) {
+  .control-panel {
+    width: 100%;
+    height: auto;
+  }
+  .control-panel .location-control {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .weather-details li span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

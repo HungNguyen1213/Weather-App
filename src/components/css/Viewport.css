@@ -2,8 +2,9 @@
   width: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   z-index: 1;
+  overflow: hidden;
 }
 .viewport .content {
   width: 100%;
@@ -39,4 +40,69 @@
 .weather-info .weather-icon > img {
   width: 38px;
   display: block;
+}
+
+@media screen and (max-width: 992px) {
+  .viewport {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .viewport .temperature > p {
+    font-size: 64px;
+  }
+
+  .city-info .city-name {
+    font-size: 24px;
+  }
+  .city-info .current-datetime {
+    font-size: 14px;
+  }
+  .weather-info .weather-icon > img {
+    width: 29px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .viewport .content {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .viewport .temperature {
+    width: 100%;
+    text-align: center;
+  }
+  .city-info {
+    margin-left: 10px;
+  }
+  .weather-info .weather-icon > img {
+    width: 29px;
+  }
+  .weather-info {
+    align-items: flex-end;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 310px) {
+  .viewport .content {
+    flex-direction: column;
+    padding: 0;
+    justify-content: space-around;
+    margin-bottom: 8px;
+  }
+  .viewport .temperature {
+    width: 100%;
+    text-align: center;
+  }
+  .city-info {
+    text-align: center;
+    margin: 0;
+  }
+  .weather-info {
+    align-items: center;
+    margin: 0;
+  }
 }

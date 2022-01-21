@@ -21,6 +21,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .container {
@@ -32,6 +33,7 @@ ul {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
   display: flex;
   position: relative;
+  overflow: hidden;
 }
 
 .container::after {
@@ -43,4 +45,23 @@ ul {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.1);
   z-index: 0;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    height: 100vh;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  * {
+    font-size: 14px;
+  }
 }
