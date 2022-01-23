@@ -48,6 +48,7 @@
 }
 .control-panel .btn:hover {
   border-bottom: 4px solid white;
+  cursor: pointer;
 }
 .control-panel .fas.fa-search {
   color: #444;
@@ -88,6 +89,7 @@
   opacity: 1;
   transform: translateX(20px);
   font-size: 18px;
+  cursor: pointer;
 }
 .list-cities li,
 .weather-details li {

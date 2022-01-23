@@ -5,10 +5,10 @@ import ControlPanel from "./ControlPanel";
 import { useTime } from "../store";
 
 function Container() {
-  const { currentPeriod } = useTime();
+  const { timeOfDay } = useTime();
   const background = useMemo(() => {
-    return require(`../assets/${currentPeriod}/sky.jpg`);
-  }, [currentPeriod]);
+    return require(`../assets/${timeOfDay}/sky.jpg`);
+  }, [timeOfDay]);
 
   return (
     <>

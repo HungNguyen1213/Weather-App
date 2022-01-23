@@ -3,17 +3,20 @@ import React, { useState, useEffect } from "react";
 import { TimeContext } from "./Context";
 
 function TimeProvider({ children }) {
+  const calcTimeOfDay = (data) => {
+    const time = parseInt(data.format("HH"));
+    return time >= 6 && time < 19 ? "day" : "night";
+  };
   const [currentTime, setCurrentTime] = useState(window.moment().locale("vi"));
-  const [currentPeriod, setCurrentPeriod] = useState(
-    window.moment().locale("vi").format("a")
+  const [timeOfDay, setTimeOfDay] = useState(() =>
+    calcTimeOfDay(window.moment().locale("vi"))
   );
 
   useEffect(() => {
     let timeId = setInterval(() => {
       const time = window.moment().locale("vi");
-      const period = time.format("a");
       setCurrentTime(time);
-      setCurrentPeriod(period);
+      setTimeOfDay(calcTimeOfDay(time));
     }, 5000);
     return () => {
       clearInterval(timeId);
@@ -22,8 +25,8 @@ function TimeProvider({ children }) {
 
   const state = {
     currentTime,
-    setCurrentPeriod,
-    currentPeriod,
+    setTimeOfDay,
+    timeOfDay,
   };
 
   return <TimeContext.Provider value={state}>{children}</TimeContext.Provider>;
