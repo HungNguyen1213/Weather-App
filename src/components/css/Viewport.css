@@ -67,27 +67,6 @@
 
 @media screen and (max-width: 390px) {
   .viewport .content {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .viewport .temperature {
-    width: 100%;
-    text-align: center;
-  }
-  .city-info {
-    margin-left: 10px;
-  }
-  .weather-info .weather-icon > img {
-    width: 29px;
-  }
-  .weather-info {
-    align-items: flex-end;
-    margin-right: 10px;
-  }
-}
-
-@media screen and (max-width: 310px) {
-  .viewport .content {
     flex-direction: column;
     padding: 0;
     justify-content: space-around;
